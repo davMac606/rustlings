@@ -27,6 +27,8 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
+    //use std::fmt::format;
+
     use super::*;
 
     #[test]
@@ -34,7 +36,13 @@ mod tests {
         let order_template = create_order_template();
 
         // TODO: Create your own order using the update syntax and template above!
-        // let your_order =
+        let your_order = Order{
+            name: String::from("Hacker in Rust"),
+            count: 1,
+            ..order_template
+
+
+        };
 
         assert_eq!(your_order.name, "Hacker in Rust");
         assert_eq!(your_order.year, order_template.year);
